@@ -1,0 +1,39 @@
+<atv>
+  <body>
+    <videoPlayer id="com.sample.video-player">
+      <httpFileVideoAsset id="{{VAL(Video/key)}}">
+        <mediaURL>{{MEDIAURL(Video)}}</mediaURL>
+        <title>{{VAL(Video/title)}}</title>
+        <description>{{VAL(Video/summary)}}</description>
+        <bookmarkTime>{{EVAL({{VAL(Video/viewOffset:0)}} / 1000)}}</bookmarkTime>
+        <image>{{IMAGEURL(Video/thumb::384)}}</image>
+        
+        <myMetadata>
+            <!-- PMS, OSD settings, ... -->
+            <baseURL>{{VAL(%baseURL)}}</baseURL>
+            <accessToken>{{VAL(%accesstoken)}}</accessToken>
+            
+            <key>{{VAL(Video/key)}}</key>
+            <ratingKey>{{VAL(Video/ratingKey)}}</ratingKey>
+            <duration>{{VAL(Video/duration)}}</duration>
+            
+            <showClock>{{VAL($showplayerclock)}}</showClock>
+            <timeFormat>{{VAL($timeformat)}}</timeFormat>
+            <clockPosition>{{VAL($clockposition)}}</clockPosition>
+            <overscanAdjust>{{VAL($overscanadjust)}}</overscanAdjust>
+            <showEndtime>{{VAL($showendtime)}}</showEndtime>
+            
+            <!-- stacked media -->
+            <httpFileVideoAsset id="{{VAL(key)}}">
+                <mediaURL>{{MEDIAURL(key)}}</mediaURL>
+                <title>{{VAL(@main/Video/title)}}</title>
+                <description>{{VAL(@main/Video/summary)}}</description>
+                <!--bookmarkTime>{{EVAL({{VAL(@main/Video/viewOffset:0)}} / 1000)}}</bookmarkTime-->
+                <image>{{IMAGEURL(@main/Video/thumb::384)}}</image>
+            </httpFileVideoAsset>{{COPY(Video/Media/Part)}}
+        </myMetadata>
+        
+      </httpFileVideoAsset>
+    </videoPlayer>
+  </body>
+</atv>

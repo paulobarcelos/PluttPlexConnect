@@ -1,0 +1,18 @@
+19:12:37 PlexConnect: started: 19:12:37
+19:12:37 PlexConnect: Version: 0.3.1+
+19:12:37 PlexConnect: Python: 2.7.5 (default, Aug 25 2013, 00:04:04) 
+[GCC 4.2.1 Compatible Apple LLVM 5.0 (clang-500.0.68)]
+19:12:37 PlexConnect: Host OS: darwin
+19:12:37 PlexConnect: IP_self: 192.168.1.74
+19:12:37 DNSServer: started: 19:12:37
+19:12:37 DNSServer: ***
+19:12:37 DNSServer: DNSServer: Serving DNS on 192.168.1.74 port 53.
+19:12:37 DNSServer: ***
+19:12:37 WebServer: started: 19:12:37
+19:12:37 WebServer: ***
+19:12:37 WebServer: WebServer: Serving HTTP on 192.168.1.74 port 80.
+19:12:37 WebServer: ***
+19:12:37 WebServer: started: 19:12:37
+19:12:37 WebServer: ***
+19:12:37 WebServer: WebServer: Serving HTTPS on 192.168.1.74 port 443.
+19:12:37 WebServer: ***

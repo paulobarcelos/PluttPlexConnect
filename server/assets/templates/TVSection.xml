@@ -1,0 +1,115 @@
+<atv>
+  <head>
+    <script src="{{URL(:/js/utils.js)}}" />
+    <script src="{{URL(:/js/scrobble.js)}}" />
+  </head>
+
+  <body>
+    {{ADDXML(OnDeck::onDeck?X-Plex-Container-Start=0&amp;X-Plex-Container-Size=40)}}
+    {{ADDXML(RecentlyAired::newest?X-Plex-Container-Start=0&amp;X-Plex-Container-Size=40)}}
+    {{ADDXML(RecentlyAdded::recentlyAdded?stack=1&amp;X-Plex-Container-Start=0&amp;X-Plex-Container-Size=40)}}
+    {{ADDXML(RecentlyViewedEpisodes::recentlyViewed?X-Plex-Container-Start=0&amp;X-Plex-Container-Size=40)}}
+
+    <scroller id="com.sample.movie-showcase-grid">
+      <items>
+        <collectionDivider alignment="left" accessibilityLabel="On Deck">
+          {{CUT(@OnDeck/size:CUT:0=CUT|1=)}}
+          <title>{{TEXT(On Deck)}}</title>
+        </collectionDivider>
+        <shelf id="shelf_0" columnCount="7">
+          {{CUT(@OnDeck/size:CUT:0=CUT|1=)}}
+          <sections>
+            <shelfSection>
+              <items>
+                <moviePoster id="{{VAL(key)}}" accessibilityLabel="{{VAL(title)}}"
+                            onPlay="atv.loadURL('{{URL(key)}}&amp;PlexConnect=Play')"
+                            onSelect="atv.loadURL('{{URL(key)}}&amp;PlexConnect=EpisodePrePlay')"
+                            onHoldSelect="scrobbleMenu('{{VAL(%baseURL)}}', '{{VAL(%accesstoken)}}', '{{VAL(ratingKey)}}', '{{TEXT(On Deck Episode)}}', '{{URL(grandparentKey)}}/children');">
+                  {{COPY(@OnDeck/Video)}}
+                  <title>{{VAL(title)}}</title>
+                  <subtitle>{{episodestring(parentIndex:0:index:0)}}</subtitle>
+                  <image>{{IMAGEURL(grandparentThumb::384)}}</image>
+                  <defaultImage>resource://Poster.png</defaultImage>
+                </moviePoster>
+              </items>
+            </shelfSection>
+          </sections>
+        </shelf>
+
+        <collectionDivider alignment="left" accessibilityLabel="Recently Aired">
+          {{CUT(@RecentlyAired/size:CUT:0=CUT|1=)}}
+          <title>{{TEXT(Recently Aired)}}</title>
+        </collectionDivider>
+        <shelf id="shelf_1" columnCount="7">
+          {{CUT(@RecentlyAired/size:CUT:0=CUT|1=)}}
+          <sections>
+            <shelfSection>
+              <items>
+                <moviePoster id="{{VAL(key)}}" accessibilityLabel="{{VAL(title)}}"
+                            onPlay="atv.loadURL('{{URL(key)}}&amp;PlexConnect=Play')"
+                            onSelect="atv.loadURL('{{URL(key)}}&amp;PlexConnect=EpisodePrePlay')"
+                            onHoldSelect="scrobbleMenu('{{VAL(%baseURL)}}', '{{VAL(%accesstoken)}}', '{{VAL(ratingKey)}}', '{{TEXT(Recently Aired Episode)}}', '{{URL(grandparentKey)}}/children');">
+                  {{COPY(@RecentlyAired/Video)}}
+                  <title>{{VAL(title)}}</title>
+                  <subtitle>{{episodestring(parentIndex:0:index:0)}}</subtitle>
+                  <image>{{IMAGEURL(grandparentThumb::384)}}</image>
+                  <defaultImage>resource://Poster.png</defaultImage>
+                </moviePoster>
+              </items>
+            </shelfSection>
+          </sections>
+        </shelf>
+
+        <collectionDivider alignment="left" accessibilityLabel="Recently Added">
+          {{CUT(@RecentlyAdded/size:CUT:0=CUT|1=)}}
+          <title>{{TEXT(Recently Added)}}</title>
+        </collectionDivider>
+        <shelf id="shelf_2" columnCount="7">
+          {{CUT(@RecentlyAdded/size:CUT:0=CUT|1=)}}
+          <sections>
+            <shelfSection>
+              <items>
+                <moviePoster id="{{VAL(key)}}" accessibilityLabel="{{VAL(title)}}"
+                            onPlay="atv.loadURL('{{URL(key)}}&amp;PlexConnect=Season')"
+                            onSelect="atv.loadURL('{{URL(key)}}&amp;PlexConnect=Season')"
+                            onHoldSelect="scrobbleMenu('{{VAL(%baseURL)}}', '{{VAL(%accesstoken)}}', '{{VAL(ratingKey)}}', '{{TEXT(Recently Added)}}', '{{URL(parentKey)}}/children');">
+                  {{COPY(@RecentlyAdded/Directory)}}
+                  <title>{{VAL(parentTitle)}}</title>
+                  <subtitle>{{TEXT(Season)}} {{VAL(index)}}</subtitle>
+                  <image>{{IMAGEURL(parentThumb::384)}}</image>
+                  <defaultImage>resource://Poster.png</defaultImage>
+                </moviePoster>
+              </items>
+            </shelfSection>
+          </sections>
+        </shelf>
+        
+        <collectionDivider alignment="left" accessibilityLabel="Recently Viewed Episodes">
+          {{CUT(@RecentlyViewedEpisodes/size:CUT:0=CUT|1=)}}
+          <title>{{TEXT(Recently Viewed Episodes)}}</title>
+        </collectionDivider>
+        <shelf id="shelf_1" columnCount="7">
+          {{CUT(@RecentlyViewedEpisodes/size:CUT:0=CUT|1=)}}
+          <sections>
+            <shelfSection>
+              <items>
+                <moviePoster id="{{VAL(key)}}" accessibilityLabel="{{VAL(title)}}"
+                            onPlay="atv.loadURL('{{URL(key)}}&amp;PlexConnect=Play')"
+                            onSelect="atv.loadURL('{{URL(key)}}&amp;PlexConnect=EpisodePrePlay')"
+                            onHoldSelect="scrobbleMenu('{{VAL(%baseURL)}}', '{{VAL(%accesstoken)}}', '{{VAL(ratingKey)}}', '{{TEXT(Recently Viewed Episode)}}', '{{URL(grandparentKey)}}/children');">
+                  {{COPY(@RecentlyViewedEpisodes/Video)}}
+                  <title>{{VAL(title)}}</title>
+                  <subtitle>{{episodestring(parentIndex:0:index:0)}}</subtitle>
+                  <image>{{IMAGEURL(grandparentThumb::384)}}</image>
+                  <defaultImage>resource://Poster.png</defaultImage>
+                </moviePoster>
+              </items>
+            </shelfSection>
+          </sections>
+        </shelf>
+
+      </items>
+    </scroller>
+  </body>
+</atv>
+
