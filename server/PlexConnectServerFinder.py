@@ -27,5 +27,6 @@ class Finder():
             return self.ip
         except urllib2.URLError, e:
           continue
+    print 'No PlexConnect server found'
     self.ip = '0.0.0.0'
     return self.ip

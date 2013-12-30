@@ -207,13 +207,6 @@ class MyHandler(BaseHTTPRequestHandler):
                     return
 
             else:
-                # use the /plexconnect endpoint to discover plex connect servers in the network
-                if '/plexconnect' == self.path :
-                    self.send_response(200)
-                    self.send_header('X-PlexConnect', 'Yeah!')
-                    self.end_headers()
-                    return
-
                 """
                 # unexpected request
                 self.send_error(403,"Access denied: %s" % self.path)
