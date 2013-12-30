@@ -27,5 +27,5 @@ class Finder():
             return self.ip
         except urllib2.URLError, e:
           continue
-    self.ip = '0.0.0.0';
+    self.ip = '0.0.0.0'
     return self.ip
