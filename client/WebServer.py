@@ -218,7 +218,7 @@ class MyHandler(BaseHTTPRequestHandler):
                 # unexpected request
                 self.send_error(403,"Access denied: %s" % self.path)
                 """
-                self.send_error(403,"Not Serving Client %s" % self.client_address[0])
+                self.send_error(403,self.path +"Not Serving Client %s" % self.client_address[0])
         except IOError:
             self.send_error(404,"File Not Found: %s" % self.path)
 

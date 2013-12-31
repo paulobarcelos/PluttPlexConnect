@@ -1,23 +1,11 @@
-23:26:01 PlexConnect: started: 23:26:01
-23:26:01 PlexConnect: Version: 0.3.1+
-23:26:01 PlexConnect: Python: 2.7.5 (default, Aug 25 2013, 00:04:04) 
+00:54:24 PlexConnect: started: 00:54:24
+00:54:24 PlexConnect: Version: 0.3.1+
+00:54:24 PlexConnect: Python: 2.7.5 (default, Aug 25 2013, 00:04:04) 
 [GCC 4.2.1 Compatible Apple LLVM 5.0 (clang-500.0.68)]
-23:26:01 PlexConnect: Host OS: darwin
-23:26:01 PlexConnect: IP_self: 192.168.1.74
-23:26:01 DNSServer: started: 23:26:01
-23:26:01 DNSServer: ***
-23:26:01 DNSServer: DNSServer: Serving DNS on 192.168.1.74 port 53.
-23:26:01 DNSServer: ***
-23:26:01 WebServer: started: 23:26:01
-23:26:01 WebServer: ***
-23:26:01 WebServer: WebServer: Serving HTTP on 192.168.1.74 port 80.
-23:26:01 WebServer: ***
-23:26:01 WebServer: started: 23:26:01
-23:26:01 WebServer: ***
-23:26:01 WebServer: WebServer: Serving HTTPS on 192.168.1.74 port 443.
-23:26:01 WebServer: ***
-23:26:18 PlexConnect: Shutting down.
-23:26:18 WebServer: Shutting down.
-23:26:19 WebServer: Shutting down.
-23:26:21 DNSServer: Shutting down.
-23:26:21 PlexConnect: shutdown
+00:54:24 PlexConnect: Host OS: darwin
+00:54:24 PlexConnect: IP_self: 192.168.1.74
+00:54:24 DNSServer: started: 00:54:24
+00:54:24 DNSServer: Failed to create socket on UDP port 53: [Errno 48] Address already in use
+00:54:24 PlexConnect: DNSServer not alive. Shutting down.
+00:54:24 PlexConnect: Shutting down.
+00:54:24 PlexConnect: shutdown
